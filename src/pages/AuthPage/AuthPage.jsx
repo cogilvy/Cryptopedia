@@ -1,7 +1,9 @@
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
 
-function AuthPage({ setUser }) {
+
+function AuthPage({ user, setUser }) {
+
   return (
     <main>
       <h1>AuthPage</h1>

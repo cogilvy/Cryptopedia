@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0% 7% 1% 0%;
+  background-color: white;
+  width: 100%;
+  border-bottom: double;
+}
+
+.logo-container {
+  margin: 2vh 0 0 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container h2 {
+  margin: 0;
+}
+
+.logo {
+  width: 5vw;
+}

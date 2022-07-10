@@ -2,9 +2,8 @@ import './App.css';
 import { useState } from "react";
 import { getUser } from "../../utilities/users-service";
 import { Routes, Route } from "react-router-dom";
-import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import AuthPage from "../AuthPage/AuthPage";
-import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
+import HomePage from "../HomePage/HomePage";
 import NavBar from "../../components/NavBar/NavBar";
 
 function App() {
@@ -15,14 +14,20 @@ function App() {
       {
         user ?
         <>
-        <NavBar setUser={setUser} user={user}/>
+          <NavBar setUser={setUser} user={user}/>
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/auth" element={<AuthPage setUser={setUser} user={user} />} />
           </Routes>
         </>
         :
-        <AuthPage setUser={setUser} />
+        <>
+          <NavBar setUser={setUser} user={user}/>
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/auth" element={<AuthPage setUser={setUser} user={user} />} />
+          </Routes>
+        </>
       }
     </main>
   );

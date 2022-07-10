@@ -1,0 +1,238 @@
+.App {
+  margin-top: 60px;
+}
+
+.flex {
+  height: 200px;
+  display: flex;
+}
+
+.article-image {
+  width: 180px;
+  margin: 14px 5px 0px 0px;
+  border-radius: 50%;
+}
+
+.news-container {
+  margin: 2% 4% 5% 4%;
+}
+
+.max-lines {
+  text-align: left;
+}
+
+.home-news {
+  margin-top: 2%;
+}
+
+.home-image {
+  height: 400px;
+}
+
+.advertisement {
+  background-image: radial-gradient(lightGreen, lightBlue);
+  height: 85px;
+  width: 10vw;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2px;
+}
+
+.advertisement-img {
+  float: left;
+  height: 85px;
+}
+
+.ad-headers {
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
+  width: 70%;
+  float: right;
+}
+
+.item-card-container {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.item-card {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0.5px;
+  border-color: rgba(150,150,150,0.5);
+  margin: 1vw;
+  padding: 1vw;
+}
+
+.image-wrapper {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.no-borders {
+  border: none;
+}
+
+.controls > * {
+  height: 50%;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 3vw;
+}
+
+.controls :hover {
+  cursor: pointer;
+}
+
+.hover :hover {
+  cursor: pointer;
+}
+
+.controls button:last-child {
+  margin-right: 1vw;
+  border-right-color: transparent;
+}
+
+.controls-link {
+  color: black;
+}
+
+.button-icon {
+  width: 2vw;
+}
+
+.search-bar {
+  margin: 1% 6% 0% 6%;
+}
+
+.ticker {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.crypto-table {
+  text-align: center;
+}
+
+.crypto-container {
+  margin: 2% 7% 5% 7%;
+}
+
+.login-signup {
+  margin-bottom: 5%
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+}
+
+.trading-tips {
+  background-image: url("https://images.unsplash.com/photo-1515549832467-8783363e19b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2082&q=80");
+  background-position: center;
+  background-size: cover;
+  padding: 1vw;
+}
+
+.game-card {
+  background-image: url("https://images.unsplash.com/photo-1472841298542-80b08039a5ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-position: center;
+  background-size: cover;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0.5px;
+  border-color: rgba(150,150,150,0.5);
+  margin: 1vw;
+  padding: 1vw;
+}
+
+.sidebar {
+  margin: 50% 0% 0% 4%;
+}
+
+.new-game-form {
+  margin: 10% 5% 5% 5%;
+}
+
+.port-card {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0.5px;
+  border-color: rgba(150,150,150,0.5);
+  margin: 1vw;
+  padding: 0.5vw;
+  background-color: #e6e6e6;
+}
+
+.port-card :hover {
+  cursor: pointer;
+}
+
+.portfolio-container {
+  width: auto;
+  display: block;
+  height: 100%;
+}
+
+.apply-container {
+  width: auto;
+}
+
+.source-image {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.buy-container {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+
+.buy-crypto-card {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0.5px;
+  border-color: rgba(150,150,150,0.5);
+  margin: 1vw;
+  padding: 0.5vw;
+  background-color: #e6e6e6;
+}
+
+.home-link hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.crypto-article {
+  height: 1vw;
+  width: auto;
+  margin: 1vw 1vw 7vw 1vw;
+}
+
+a.button {
+  -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+.resources {
+  margin: 30%;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+}
