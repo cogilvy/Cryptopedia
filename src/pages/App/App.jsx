@@ -2,7 +2,8 @@ import './App.css';
 import { useState } from "react";
 import { getUser } from "../../utilities/users-service";
 import { Routes, Route } from "react-router-dom";
-import AuthPage from "../AuthPage/AuthPage";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import HomePage from "../HomePage/HomePage";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -17,7 +18,6 @@ function App() {
           <NavBar setUser={setUser} user={user}/>
           <Routes>
             <Route exact path="/" element={<HomePage />} />
-            <Route path="/auth" element={<AuthPage setUser={setUser} user={user} />} />
           </Routes>
         </>
         :
@@ -25,7 +25,8 @@ function App() {
           <NavBar setUser={setUser} user={user}/>
           <Routes>
             <Route exact path="/" element={<HomePage />} />
-            <Route path="/auth" element={<AuthPage setUser={setUser} user={user} />} />
+            <Route path="/login" element={<LoginForm setUser={setUser} user={user} />} />
+            <Route path="/signup" element={<SignUpForm setUser={setUser} user={user} />} />
           </Routes>
         </>
       }

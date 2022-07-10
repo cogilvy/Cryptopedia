@@ -35,7 +35,7 @@ function HomePage() {
                     <div>
                       <h2 style={{float: "left", width: "100%"}}>Facebook Libra Cryptocurrency a 'Serious Concern' for Federal Reserve</h2>
                       <h5>
-                        The United States Federal Reserve System has added its voice to the chorus of doubts raised by lawmakers, politicians and others worldwide about Facebook's newly announced cryptocurrency, Libra. While speaking to House lawmakers Wednesday, Federal Reserve Chairman Jerome Powell said the US central bank has "serious concerns" about Libra, The Wall Street Journal reported.
+                        The United States Federal Reserve System has added its voice to the chorus of doubts raised by lawmakers, politicians and others worldwide about Facebook's newly announced cryptocurrency, Libra. While speaking to House lawmakers Wednesday, Federal Reserve Chairman Jerome Powell said the US central bank has "serious concerns" about Libra..
                       </h5>
                       <a href="https://www.cnet.com/news/us-central-bank-has-serious-concerns-about-facebooks-cryptocurrency-libra-report-says/" target="_blank" rel="noopener noreferrer">Click Here To View Full Article</a>
                     </div>

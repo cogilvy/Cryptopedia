@@ -14,7 +14,7 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <div className="navbar">
+    <div className="NavBar">
       <NavLink className="controls-link" to="/">
         <div className="logo-container">
           <img

@@ -1,60 +1,98 @@
-import { Component } from "react";
+import { useState } from "react";
 import { signUp } from "../../utilities/users-service";
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 
-class SignUpForm extends Component {
-  state = {
+function SignUpForm({setUser}) {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirm: '',
     error: ''
+  });
+
+  const navigate = useNavigate();
+
+  function handleChange(evt) {
+    setFormData({...formData, [evt.target.name]: evt.target.value, error: ''});
   }
 
-  handleChange = (evt) => {
-    // The object passed to setState is merged with the current state object
-    this.setState({
-      [evt.target.name]: evt.target.value,
-      error: ''
-    });
-  }
-
-  handleSubmit = async (evt) => {
+  async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      const formData = {...this.state};
-      delete formData.error;
-      delete formData.confirm;
-
-      const user = await signUp(formData);
-      this.props.setUser(user);
-      this.props.navigate('/');
+      const creds = {...formData};
+      delete creds.error;
+      delete creds.confirm;
+    
+      const user = await signUp(creds);
+      setUser(user);
+      navigate('/');
     } catch {
       // An error occurred...
-      this.setState({error: 'Sign Up Failed - Try Again'});
+      setFormData({...formData, error: 'Sign Up Failed - Try Again'});
     }
   }
 
-  render() {
-    const disable = this.state.password !== this.state.confirm;
-    return (
-      <div>
-        <div className="form-container">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <label>Name</label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-            <label>Email</label>
-            <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <label>Confirm</label>
-            <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-            <button type="submit" disabled={disable}>SIGN UP</button>
-          </form>
-        </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
-    )
-  }
+  return (
+    <Grid textAlign='center' style={{ height: '50vh' }} verticalAlign='middle'>
+      <Grid.Column width={6}>
+        <Header as='h2' color='black' textAlign='center'>
+          <Image src='https://hashoshi.com/wp-content/uploads/2019/01/icx_coin_icon.png' /> Sign Up For An Account
+        </Header>
+        <Form onSubmit={handleSubmit} size='large'>
+          <Segment stacked>
+            <Form.Input
+              onChange={handleChange}
+              fluid
+              icon='at'
+              iconPosition='left'
+              name="name"
+              value={formData.name}
+              placeholder='Name'
+              />
+            <Form.Input
+              onChange={handleChange}
+              fluid
+              icon='at'
+              iconPosition='left'
+              name="email"
+              value={formData.email}
+              placeholder='Email'
+              />
+            <Form.Input
+              onChange={handleChange}
+              fluid
+              icon='lock'
+              iconPosition='left'
+              name="password"
+              placeholder='Password'
+              value={formData.password}
+              type='password'
+              />
+            <Form.Input
+              onChange={handleChange}
+              fluid
+              icon='lock'
+              iconPosition='left'
+              name="confirm"
+              placeholder='Confirm Password'
+              value={formData.confirm}
+              type='password'
+              />
+            <Button color='teal' fluid size='large'>
+              Sign Up
+            </Button>
+          </Segment>
+        </Form>
+        <Message>
+          Already have an account? &nbsp;&nbsp;&nbsp;&nbsp;<NavLink to="/login"><Button size="small" className="hover">Login</Button></NavLink>
+        </Message>
+        { formData.error && <Message color={"red"}>&nbsp;{formData.error}</Message> }
+      </Grid.Column>
+    </Grid>
+  );
 }
+
 
 export default SignUpForm;

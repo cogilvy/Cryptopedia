@@ -38,7 +38,7 @@ function Controls({user, handleLogOut}) {
           </>
           :
           <button>
-            <NavLink className="controls-link" to="/auth">
+            <NavLink className="controls-link" to="/login">
               <img className="button-icon" src="https://i.imgur.com/KQsVe9D.png" alt="icon"/><br/>
               Signup/Login
             </NavLink>
