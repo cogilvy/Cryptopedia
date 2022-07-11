@@ -6,3 +6,17 @@ export async function fetchTop100Cryptos() {
   return sendRequest(`${BASE_URL}/top100`);
 }
 
+export async function fetchCryptoData(id) {
+  return sendRequest(`${BASE_URL}/${id}`);
+}
+
+
+
+
+
+
+export function formatNumbers(x) {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+}
