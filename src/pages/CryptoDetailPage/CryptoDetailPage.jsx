@@ -111,20 +111,12 @@ function CryptoDetailPage() {
           <Grid.Column width={1}>
           </Grid.Column>
           <Grid.Column width={14}>
+            <Header style={{textDecoration: "underline"}} size="huge">Recent News:</Header>
+            <div className="two-column-grid">
             {
-              articles.length > 0 ?
-              <Header style={{textDecoration: "underline"}} size="huge">Recent News:</Header>
-              :
-              null
-            }
-            <div style={{display: "grid", gridTemplateColumns: "repeat(2,1fr)"}}>
-            {
-              articles.length > 0 ?
               articles.map(article => {
                 return <CryptoArticle article={article} />
               })
-              :
-              null
             }
             </div>
           </Grid.Column>
