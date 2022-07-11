@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-// import CryptoArticle from '../components/CryptoArticle';
+import CryptoArticle from '../../components/CryptoArticle/CryptoArticle';
 import { Grid, Header, List, Segment } from 'semantic-ui-react';
 import TradingViewWidget from 'react-tradingview-widget';
-import { formatNumbers, fetchCryptoData } from '../../utilities/cryptos-api';
+import { formatNumbers, fetchCryptoData, fetchCryptoNews } from '../../utilities/cryptos-api';
 
 function CryptoDetailPage() {
   const [crypto, setCrypto] = useState({});
+  const [articles, setArticles] = useState([]);
 
   const {symbol, id} = useParams();
 
   useEffect(() => {
     async function fetchCrypto() {
-      const res = await fetchCryptoData(id);
-      console.log(res);
-      setCrypto(res);
+      const data = await fetchCryptoData(id);
+      const news = await fetchCryptoNews(data.name);
+      setCrypto(data);
+      setArticles(news);
     }
     fetchCrypto();
   }, []);
@@ -107,24 +109,24 @@ function CryptoDetailPage() {
         <Grid.Row>
           <Grid.Column width={1}>
           </Grid.Column>
-          {/* <Grid.Column width={14}>
+          <Grid.Column width={14}>
             {
-              cryptoArticles.length > 0 ?
+              articles.length > 0 ?
               <Header style={{textDecoration: "underline"}} size="huge">Recent News:</Header>
               :
               null
             }
             <div style={{display: "grid", gridTemplateColumns: "repeat(2,1fr)"}}>
             {
-              cryptoArticles.length > 0 ?
-              cryptoArticles.map(article => {
+              articles.length > 0 ?
+              articles.map(article => {
                 return <CryptoArticle article={article} />
               })
               :
               null
             }
             </div>
-          </Grid.Column> */}
+          </Grid.Column>
           <Grid.Column width={1}>
 
           </Grid.Column>

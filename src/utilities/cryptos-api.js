@@ -10,6 +10,10 @@ export async function fetchCryptoData(id) {
   return sendRequest(`${BASE_URL}/${id}`);
 }
 
+export async function fetchCryptoNews(crypto) {
+  return sendRequest(`${BASE_URL}/news/${crypto}`);
+}
+
 
 
 
