@@ -50,7 +50,7 @@ function CryptoDetailPage() {
                 <List.Item>
                   <List.Content>
                     <List.Header as="h3">Current Price</List.Header>
-                    <h5 style={{margin: "0px"}}>${formatNumbers(crypto.quote.USD.price.toFixed(4))}</h5>
+                    <h5 style={{margin: "0px"}}>${formatNumbers(crypto.quote.USD.price.toFixed(6))}</h5>
                   </List.Content>
                 </List.Item>
                 <List.Item>

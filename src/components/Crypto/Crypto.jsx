@@ -11,7 +11,12 @@ function Crypto({crypto, idx}) {
       <Table.Cell>{crypto.symbol}</Table.Cell>
       <Table.Cell>{crypto.name}</Table.Cell>
       <Table.Cell>${formatNumbers(crypto.quote.USD.market_cap.toFixed(2))}</Table.Cell>
-      <Table.Cell style={{color: "blue"}}>${parseFloat(crypto.quote.USD.price).toFixed(4)}</Table.Cell>
+      {
+        crypto.quote.USD.price > 999 ?
+        <Table.Cell style={{color: "blue"}}>${formatNumbers(crypto.quote.USD.price.toFixed(3))}</Table.Cell>
+        :
+        <Table.Cell style={{color: "blue"}}>${formatNumbers(crypto.quote.USD.price.toFixed(6))}</Table.Cell>
+      }
       <Table.Cell>${formatNumbers(crypto.quote.USD.volume_24h.toFixed(2))}</Table.Cell>
       {
         crypto.quote.USD.percent_change_24h.toString().includes("-") ?
