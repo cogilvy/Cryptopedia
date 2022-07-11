@@ -4,6 +4,7 @@ import CryptoArticle from '../../components/CryptoArticle/CryptoArticle';
 import { Grid, Header, List, Segment } from 'semantic-ui-react';
 import TradingViewWidget from 'react-tradingview-widget';
 import { formatNumbers, fetchCryptoData, fetchCryptoNews } from '../../utilities/cryptos-api';
+import './CryptoDetailPage.css';
 
 function CryptoDetailPage() {
   const [crypto, setCrypto] = useState({});
@@ -133,8 +134,10 @@ function CryptoDetailPage() {
         </Grid.Row>
       </Grid>
     </div>
-    : 
-    <h1>Loading...</h1>
+    :
+    <div id="load">
+      <img src="https://media2.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif?cid=ecf05e476nb07ou42wqj0gy270hfl64veo849vtd3izgik86&rid=giphy.gif&ct=g" alt="load" />
+    </div>
   );
 }
 
