@@ -3,7 +3,7 @@ import { fetchTop100Cryptos } from "../../utilities/cryptos-api";
 import Crypto from '../../components/Crypto/Crypto';
 import { Table, Message } from 'semantic-ui-react';
 
-function CryptoPage() {
+function CryptoTable() {
   const [cryptos, setCryptos] = useState([]);
 
   useEffect(() => {
@@ -53,4 +53,4 @@ function CryptoPage() {
   );
 }
 
-export default CryptoPage;
+export default CryptoTable;

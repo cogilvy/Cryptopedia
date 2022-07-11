@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Table } from 'semantic-ui-react'
 
 function Crypto({crypto, idx}) {
+  const navigate = useNavigate();
 
   function numberWithCommas(x) {
     var parts = x.toString().split(".");
@@ -10,7 +11,7 @@ function Crypto({crypto, idx}) {
   }
 
   return (
-    <Table.Row>
+    <Table.Row onClick={() => navigate(`/cryptos/${crypto.symbol}/${crypto.id}`)}>
       <Table.Cell>{idx+1}</Table.Cell>
       <Table.Cell>{crypto.symbol}</Table.Cell>
       <Table.Cell>{crypto.name}</Table.Cell>
